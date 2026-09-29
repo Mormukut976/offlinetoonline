@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  o2o-portfolio:
+    build: .
+    container_name: o2o-agency-portfolio
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+      - NODE_ENV=production
