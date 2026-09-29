@@ -1,6 +1,7 @@
 import React from 'react';
 import EditionsHero from '@/components/editions/EditionsHero';
 import EditionsShowcase from '@/components/editions/EditionsShowcase';
+import EditionsGallery from '@/components/editions/EditionsGallery';
 import EditionsGrid from '@/components/editions/EditionsGrid';
 import EditionsPricing from '@/components/editions/EditionsPricing';
 import EditionsFounder from '@/components/editions/EditionsFounder';
@@ -10,6 +11,7 @@ export default function HomePage() {
     <div className="w-full">
       <EditionsHero />
       <EditionsShowcase />
+      <EditionsGallery />
       <EditionsGrid />
       <EditionsPricing />
       <EditionsFounder />

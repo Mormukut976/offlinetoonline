@@ -1,20 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #fafaf9;
   --foreground: #090d16;
-  --card: #ffffff;
-  --card-border: #e2e8f0;
-  --muted: #64748b;
-  --primary: #4f46e5;
-  --primary-hover: #4338ca;
-  --accent: #10b981;
-  --accent-light: #ecfdf5;
 }
 
 body {
-  background-color: #ffffff;
+  background-color: #fafaf9;
   color: #0f172a;
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   overflow-x: hidden;
@@ -22,48 +15,69 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.font-editorial {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
 .font-mono-edition {
   font-family: 'Space Mono', monospace;
 }
 
-/* Wix-style clean card aesthetics */
+/* Wix Studio Style Shadows & Cards */
 .wix-card {
   background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 24px;
-  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 28px;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 4px 10px -2px rgba(0, 0, 0, 0.02);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .wix-card:hover {
   border-color: #cbd5e1;
-  transform: translateY(-3px);
-  box-shadow: 0 20px 35px -5px rgba(15, 23, 42, 0.08), 0 10px 10px -5px rgba(15, 23, 42, 0.02);
+  transform: translateY(-4px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.12);
 }
 
-.wix-card-highlight {
-  background: #ffffff;
-  border: 2px solid #000000;
-  border-radius: 24px;
-  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.12);
+.wix-card-dark {
+  background: #0b1120;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 28px;
+  color: #ffffff;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
 }
 
-/* Pill CTA Buttons */
+/* Studio Pill Buttons */
 .wix-btn-primary {
-  background-color: #000000;
+  background: #090d16;
   color: #ffffff;
   border-radius: 9999px;
   font-weight: 700;
-  transition: all 0.2s ease;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .wix-btn-primary:hover {
-  background-color: #1e293b;
-  transform: scale(1.02);
+  background: #1e293b;
+  transform: scale(1.03);
+  box-shadow: 0 12px 25px -8px rgba(0, 0, 0, 0.35);
+}
+
+.wix-btn-green {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  border-radius: 9999px;
+  font-weight: 700;
+  transition: all 0.25s ease;
+  box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.4);
+}
+
+.wix-btn-green:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  transform: scale(1.03);
+  box-shadow: 0 15px 30px -5px rgba(16, 185, 129, 0.5);
 }
 
 .wix-btn-secondary {
-  background-color: #ffffff;
+  background: #ffffff;
   color: #0f172a;
   border: 1.5px solid #e2e8f0;
   border-radius: 9999px;
@@ -72,21 +86,25 @@ body {
 }
 
 .wix-btn-secondary:hover {
-  border-color: #000000;
-  background-color: #f8fafc;
+  border-color: #090d16;
+  background: #f8fafc;
 }
 
-/* Subtle clean gradients */
-.bg-subtle-mesh {
+/* Gradients & Backdrops */
+.bg-mesh-light {
   background-color: #ffffff;
   background-image: 
-    radial-gradient(at 10% 15%, rgba(99, 102, 241, 0.07) 0px, transparent 50%),
-    radial-gradient(at 90% 10%, rgba(16, 185, 129, 0.06) 0px, transparent 50%),
-    radial-gradient(at 50% 90%, rgba(244, 63, 94, 0.04) 0px, transparent 50%);
+    radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(16, 185, 129, 0.08) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(244, 63, 94, 0.05) 0px, transparent 50%);
 }
 
-.bg-soft-gray {
-  background-color: #f8fafc;
+.browser-mockup {
+  border-radius: 20px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.15);
+  overflow: hidden;
 }
 
 /* Custom Scrollbars */
@@ -95,7 +113,7 @@ body {
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #f8fafc;
+  background: #f1f5f9;
 }
 ::-webkit-scrollbar-thumb {
   background: #cbd5e1;
