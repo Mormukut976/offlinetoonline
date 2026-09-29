@@ -6,3 +6,7 @@ node_modules/
 *.db
 *.sqlite
 backups/
+
+*.mp4
+*.mov
+1440.mp4

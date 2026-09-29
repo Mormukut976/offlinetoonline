@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import Navbar from '@/components/layout/Navbar';
+import EditionsHeader from '@/components/editions/EditionsHeader';
 import Footer from '@/components/layout/Footer';
 import WhatsAppFloatingButton from '@/components/ui/WhatsAppFloatingButton';
 
@@ -33,9 +33,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
-      <body className="bg-[#080c14] text-slate-100 min-h-screen flex flex-col selection:bg-indigo-500 selection:text-white antialiased">
-        <Navbar />
+    <html lang="en" className="dark scroll-smooth">
+      <body className="bg-[#06080d] text-slate-100 min-h-screen flex flex-col selection:bg-indigo-500 selection:text-white antialiased">
+        <EditionsHeader />
         <main className="flex-1">{children}</main>
         <Footer />
         <WhatsAppFloatingButton />

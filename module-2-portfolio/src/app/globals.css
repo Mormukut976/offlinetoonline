@@ -1,10 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #080c14;
-  --foreground: #f8fafc;
-  --card: #0d1527;
-  --card-border: #1e293b;
+  --background: #06080d;
+  --foreground: #f3f4f6;
+  --card: #0c1019;
+  --card-border: #1a2233;
   --primary: #6366f1;
   --primary-hover: #4f46e5;
   --accent: #10b981;
@@ -14,77 +15,79 @@
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
   min-height: 100vh;
 }
 
-/* Glassmorphism Classes */
-.glass-panel {
-  background: rgba(15, 23, 42, 0.75);
+/* Typography styles inspired by Shopify Editions */
+.font-serif-editorial {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-mono-edition {
+  font-family: 'Space Mono', monospace;
+}
+
+/* Editions Glassmorphism & Card Styles */
+.edition-card {
+  background: rgba(12, 16, 25, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.edition-card:hover {
+  border-color: rgba(99, 102, 241, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.25);
+}
+
+.edition-sidebar {
+  background: rgba(6, 8, 13, 0.95);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-right: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.edition-header {
+  background: rgba(6, 8, 13, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
 
-.glass-card {
-  background: rgba(13, 21, 39, 0.7);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+/* High Contrast Glowing Text & Gradients */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 35%, #d97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.glass-card:hover {
-  border-color: rgba(99, 102, 241, 0.45);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px -10px rgba(99, 102, 241, 0.25);
-}
-
-.glass-nav {
-  background: rgba(8, 12, 20, 0.85);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-/* Subtle Neon Glow Highlights */
-.glow-primary {
-  box-shadow: 0 0 35px -5px rgba(99, 102, 241, 0.35);
-}
-
-.glow-accent {
-  box-shadow: 0 0 30px -5px rgba(16, 185, 129, 0.3);
-}
-
-.text-gradient {
+.text-gradient-edition {
   background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #94a3b8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.text-gradient-primary {
-  background: linear-gradient(135deg, #818cf8 0%, #6366f1 50%, #c084fc 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .text-gradient-emerald {
-  background: linear-gradient(135deg, #34d399 0%, #10b981 50%, #059669 100%);
+  background: linear-gradient(135deg, #a7f3d0 0%, #34d399 50%, #059669 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 /* Custom Scrollbars */
 ::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #080c14;
+  background: #06080d;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #1a2233;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
