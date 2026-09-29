@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  o2o-lead-system:
+    build: .
+    container_name: o2o_lead_system
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./prisma:/app/prisma
+      - ./backups:/app/backups
+    env_file:
+      - .env.local

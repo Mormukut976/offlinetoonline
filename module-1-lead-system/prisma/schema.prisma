@@ -1,0 +1,93 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Lead {
+  id            String      @id @default(cuid())
+  businessName  String
+  ownerName     String?
+  phone         String
+  email         String?
+  website       String?
+  category      String      // restaurant, hospital, hotel, tour_travel, real_estate, retail, etc.
+  city          String
+  state         String
+  address       String?
+  rating        Float?
+  status        String      @default("new") // new, contacted, interested, converted, rejected
+  source        String?     // google_maps, justdial, manual, referral
+  notes         String?
+  followUpDate  DateTime?
+  followUpStage Int         @default(1)
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  quotations    Quotation[]
+  activities    Activity[]
+}
+
+model Quotation {
+  id             String    @id @default(cuid())
+  quotationNo    String    @unique
+  leadId         String?
+  lead           Lead?     @relation(fields: [leadId], references: [id], onDelete: SetNull)
+  clientName     String
+  clientBusiness String
+  clientPhone    String
+  clientEmail    String?
+  items          String    // JSON stringified array of {service, description, price, qty}
+  subtotal       Float
+  discount       Float     @default(0)
+  tax            Float     @default(0)
+  total          Float
+  validUntil     DateTime
+  status         String    @default("draft") // draft, sent, accepted, rejected
+  notes          String?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+}
+
+model RateCard {
+  id            String   @id @default(cuid())
+  service       String
+  category      String
+  basicPrice    Float
+  standardPrice Float
+  premiumPrice  Float
+  description   String?
+  features      String   // JSON stringified features per tier
+  isActive      Boolean  @default(true)
+}
+
+model Activity {
+  id        String   @id @default(cuid())
+  leadId    String
+  lead      Lead     @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  type      String   // call, whatsapp, email, meeting, note
+  content   String
+  createdAt DateTime @default(now())
+}
+
+model Project {
+  id          String    @id @default(cuid())
+  clientName  String
+  projectType String
+  status      String    @default("pending") // pending, designing, development, review, delivered
+  deadline    DateTime?
+  assignedTo  String?
+  price       Float
+  paidAmount  Float     @default(0)
+  onboardingData String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model AppSetting {
+  key       String   @id
+  value     String
+  updatedAt DateTime @updatedAt
+}
