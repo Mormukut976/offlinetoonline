@@ -5,7 +5,7 @@ import Footer from '@/components/layout/Footer';
 import WhatsAppFloatingButton from '@/components/ui/WhatsAppFloatingButton';
 
 export const metadata: Metadata = {
-  title: 'Offline to Online (O2O Digital) — #1 Local Business Digital Growth Studio | Jaipur',
+  title: 'Offline to Online (O2O Digital) — #1 Local Business Growth Studio | Jaipur',
   description: 'Turn your offline business into a 24x7 customer magnet. Jamstack web design, Google 3-Pack Maps ranking, and automated WhatsApp leads at ₹0 monthly server costs. Founded by Raja Singh Chauhan, Jaipur, Rajasthan.',
   keywords: [
     'Offline to Online',
@@ -15,8 +15,7 @@ export const metadata: Metadata = {
     'Website development Jaipur',
     'Local SEO Google Maps',
     'Tour and travels website development',
-    'Doctor clinic website Jaipur',
-    'Jamstack web design India'
+    'Doctor clinic website Jaipur'
   ],
   authors: [{ name: 'Raja Singh Chauhan', url: 'https://bhumikatourandtravels.world' }],
   openGraph: {
@@ -33,8 +32,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark scroll-smooth">
-      <body className="bg-[#06080d] text-slate-100 min-h-screen flex flex-col selection:bg-indigo-500 selection:text-white antialiased">
+    <html lang="en" className="scroll-smooth">
+      <body className="bg-white text-slate-900 min-h-screen flex flex-col selection:bg-indigo-600 selection:text-white antialiased">
         <EditionsHeader />
         <main className="flex-1">{children}</main>
         <Footer />

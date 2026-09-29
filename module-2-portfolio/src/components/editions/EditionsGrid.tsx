@@ -86,40 +86,38 @@ export default function EditionsGrid() {
   ];
 
   return (
-    <section id="features" className="py-20 border-t border-slate-800/80 bg-[#06080d]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+    <section id="features" className="py-20 bg-white border-b border-slate-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
         
         {/* Header */}
-        <div className="space-y-4">
-          <div className="flex items-center gap-2">
-            <span className="font-mono text-xs font-bold text-emerald-400">
-              [ VI // FULL FEATURE MATRIX ]
-            </span>
+        <div className="space-y-4 max-w-3xl">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 text-slate-800 text-xs font-bold border border-slate-200">
+            16 BUILT-IN CAPABILITIES
           </div>
-          <h2 className="text-3xl sm:text-5xl font-bold text-white tracking-tight leading-tight">
-            16 Built-in Advantages. Zero Retainer Fees.
+          <h2 className="text-3xl sm:text-5xl font-black text-slate-950 tracking-tight leading-tight">
+            Everything You Need To Win. Zero Retainer Fees.
           </h2>
-          <p className="text-sm sm:text-base text-slate-400 max-w-2xl leading-relaxed">
-            Detailed breakdown of our proprietary technology architecture and delivery standards, inspired by modern software releases.
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+            Detailed breakdown of our proprietary technology architecture and delivery standards. Every capability is included upfront.
           </p>
         </div>
 
-        {/* Dense 2-Column Grid (Shopify Editions Style from Video) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 pt-4 border-t border-slate-800/80">
+        {/* 2-Column Grid on Crisp White (Wix style) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 pt-4 border-t border-slate-200">
           {capabilities.map((item, idx) => (
-            <div key={idx} className="space-y-1.5 border-b border-slate-800/60 pb-6 group">
+            <div key={idx} className="space-y-2 border-b border-slate-100 pb-6 group">
               <div className="flex items-center justify-between">
-                <span className="text-[10px] font-mono font-bold text-indigo-400 tracking-wider">
+                <span className="text-[10px] font-bold text-indigo-600 uppercase tracking-wider px-2 py-0.5 rounded-full bg-indigo-50 border border-indigo-100">
                   {item.category}
                 </span>
-                <span className="text-[10px] font-mono text-slate-500">
-                  REF. {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
+                <span className="text-xs font-mono text-slate-400">
+                  0{idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
                 </span>
               </div>
-              <h3 className="text-base font-bold text-white group-hover:text-emerald-300 transition-colors">
+              <h3 className="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">
                 {item.title}
               </h3>
-              <p className="text-xs text-slate-400 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                 {item.desc}
               </p>
             </div>
