@@ -2,142 +2,135 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { COMPANY } from '@/data/company';
-import { MessageSquare, Phone, Menu, X, Sparkles, ArrowRight, ShieldCheck } from 'lucide-react';
+import { MessageSquare, Phone, Menu, X, ArrowRight, ShieldCheck, Sparkles, MapPin } from 'lucide-react';
 
 export default function Navbar() {
-  const pathname = usePathname();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'Services', href: '/services' },
-    { name: 'Case Studies', href: '/portfolio' },
-    { name: 'Packages & Pricing', href: '/pricing' },
-    { name: 'Live Calculator', href: '/calculator' },
-    { name: 'About Raja Singh', href: '/about' },
-    { name: 'Contact', href: '/contact' }
+    { name: 'Capabilities', href: '#catalog' },
+    { name: 'Architecture', href: '#architecture' },
+    { name: 'Case Studies', href: '#portfolio' },
+    { name: 'ROI Calculator', href: '#calculator' },
+    { name: 'Pricing', href: '#pricing' },
+    { name: 'Founder', href: '#founder' },
   ];
 
   return (
-    <header className="sticky top-0 z-50 glass-nav">
+    <header className="sticky top-0 z-50 bg-[#090a12]/85 backdrop-blur-xl border-b border-white/10 transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
-          {/* Brand Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-11 h-11 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-emerald-400 p-0.5 shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition-all">
-              <div className="w-full h-full bg-[#080c14] rounded-[10px] flex items-center justify-center">
-                <span className="font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-emerald-400 text-lg">O2O</span>
+          {/* Brand Logo & Founder Identity */}
+          <div className="flex items-center gap-3">
+            <Link href="/" className="flex items-center gap-3 group">
+              <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-violet-600 via-purple-600 to-cyan-400 p-[1.5px] shadow-lg shadow-violet-500/20 group-hover:scale-105 transition-all">
+                <div className="w-full h-full bg-[#0d0e18] rounded-[14px] flex items-center justify-center">
+                  <span className="font-black text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-300 text-sm tracking-wider">
+                    O2O
+                  </span>
+                </div>
               </div>
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="font-bold text-lg text-white tracking-tight group-hover:text-indigo-300 transition-colors">
-                  Offline to Online
-                </span>
-                <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                  Jaipur HQ
-                </span>
+              <div>
+                <div className="flex items-center gap-2">
+                  <span className="font-black text-lg text-white tracking-tight group-hover:text-violet-300 transition-colors">
+                    O2O DIGITAL
+                  </span>
+                  <span className="hidden sm:inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/25">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    JAIPUR HQ
+                  </span>
+                </div>
+                <p className="text-[11px] text-slate-400 font-medium hidden sm:block">
+                  Founder: <strong className="text-slate-200">Raja Singh Chauhan</strong> • +91 80009 07924
+                </p>
               </div>
-              <p className="text-xs text-slate-400 font-medium">
-                Founder & CEO: <span className="text-slate-200">Raja Singh Chauhan</span>
-              </p>
-            </div>
-          </Link>
+            </Link>
+          </div>
 
-          {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
-            {navLinks.map((link) => {
-              const isActive = pathname === link.href;
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`px-3.5 py-2 text-sm font-medium rounded-lg transition-all ${
-                    isActive
-                      ? 'text-white bg-indigo-600/15 border border-indigo-500/30'
-                      : 'text-slate-300 hover:text-white hover:bg-slate-800/40'
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              );
-            })}
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center gap-7 text-xs font-bold uppercase tracking-wider text-slate-300">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="hover:text-violet-400 transition-colors py-1 relative group"
+              >
+                {link.name}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-violet-500 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
+              </a>
+            ))}
           </nav>
 
-          {/* Quick CTA Actions */}
-          <div className="hidden sm:flex items-center gap-3">
+          {/* Action CTAs */}
+          <div className="flex items-center gap-3">
+            
+            {/* Phone call pill */}
             <a
               href={`tel:${COMPANY.rawPhone}`}
-              className="hidden md:flex items-center gap-2 text-xs font-semibold text-slate-300 hover:text-white px-3 py-2 rounded-lg bg-slate-800/50 border border-slate-700/60 transition-colors"
+              className="hidden sm:inline-flex items-center gap-2 px-3.5 py-2 rounded-full text-xs font-semibold text-slate-300 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 transition-all"
             >
               <Phone className="w-3.5 h-3.5 text-emerald-400" />
               <span>+91 80009 07924</span>
             </a>
 
+            {/* Glowing WhatsApp CTA Button */}
             <a
-              href={`https://wa.me/918000907924?text=${encodeURIComponent('Namaste Raja bhai! I want to discuss digitizing my business with O2O Digital.')}`}
+              href={`https://wa.me/${COMPANY.rawPhone}?text=${encodeURIComponent('Hello Raja! I want to discuss launching my business online with O2O Digital.')}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-xs font-bold px-4 py-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white shadow-lg shadow-emerald-500/20 transition-all active:scale-95"
+              className="btn-whatsapp-glow px-4 sm:px-5 py-2.5 text-xs sm:text-sm flex items-center gap-2 active:scale-95"
             >
-              <MessageSquare className="w-4 h-4 fill-white" />
-              <span>WhatsApp Strategy</span>
+              <MessageSquare className="w-3.5 h-3.5 fill-white" />
+              <span>Start 48-Hr Launch</span>
             </a>
+
+            {/* Mobile Menu Toggle */}
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="lg:hidden p-2 text-slate-300 hover:text-white rounded-xl bg-white/5 border border-white/10"
+              aria-label="Toggle Navigation"
+            >
+              {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-slate-300 hover:text-white rounded-lg bg-slate-800/60 border border-slate-700/50"
-            aria-label="Toggle navigation"
-          >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
         </div>
       </div>
 
       {/* Mobile Drawer */}
-      {mobileMenuOpen && (
-        <div className="lg:hidden border-b border-slate-800 bg-[#0a0f1d] px-4 pt-3 pb-6 space-y-3">
-          <div className="grid grid-cols-1 gap-1">
-            {navLinks.map((link) => {
-              const isActive = pathname === link.href;
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`px-4 py-2.5 text-sm font-medium rounded-lg block ${
-                    isActive
-                      ? 'text-white bg-indigo-600/20 border border-indigo-500/30'
-                      : 'text-slate-300 hover:bg-slate-800/50'
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              );
-            })}
+      {mobileOpen && (
+        <div className="lg:hidden bg-[#0e101a] border-b border-white/10 px-6 py-6 space-y-4 shadow-2xl">
+          <div className="grid grid-cols-1 gap-2 text-sm font-semibold text-slate-200">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={() => setMobileOpen(false)}
+                className="px-3 py-2.5 rounded-xl hover:bg-white/5 hover:text-violet-400 transition-colors"
+              >
+                {link.name}
+              </a>
+            ))}
           </div>
-
-          <div className="pt-4 border-t border-slate-800 space-y-2">
+          
+          <div className="pt-4 border-t border-white/10 flex flex-col gap-2">
             <a
               href={`tel:${COMPANY.rawPhone}`}
-              className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-slate-800 text-slate-200 text-sm font-semibold border border-slate-700"
+              className="py-3 px-4 rounded-xl bg-white/5 text-white text-xs font-bold flex items-center justify-center gap-2 border border-white/10"
             >
               <Phone className="w-4 h-4 text-emerald-400" />
-              Call Raja Singh: +91 80009 07924
+              <span>Call Raja Singh: +91 80009 07924</span>
             </a>
             <a
-              href={`https://wa.me/918000907924?text=${encodeURIComponent('Namaste Raja bhai! I want to discuss digitizing my business with O2O Digital.')}`}
+              href={`https://wa.me/${COMPANY.rawPhone}?text=${encodeURIComponent('Hello Raja! I want to launch my business online.')}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-emerald-500 text-white text-sm font-bold shadow-lg shadow-emerald-500/20"
+              className="py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold flex items-center justify-center gap-2"
             >
               <MessageSquare className="w-4 h-4 fill-white" />
-              Chat on WhatsApp Directly
+              <span>Chat on WhatsApp Directly</span>
             </a>
           </div>
         </div>

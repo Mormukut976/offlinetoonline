@@ -1,124 +1,162 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #fafaf9;
-  --foreground: #090d16;
+  --background: #090a12;
+  --foreground: #f8fafc;
 }
 
 body {
-  background-color: #fafaf9;
-  color: #0f172a;
+  background-color: #090a12;
+  color: #f1f5f9;
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   overflow-x: hidden;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
 }
 
-.font-editorial {
-  font-family: 'Playfair Display', Georgia, serif;
+.font-heading {
+  font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
 }
 
-.font-mono-edition {
-  font-family: 'Space Mono', monospace;
+.font-mono-code {
+  font-family: 'JetBrains Mono', monospace;
 }
 
-/* Wix Studio Style Shadows & Cards */
-.wix-card {
-  background: #ffffff;
-  border: 1px solid rgba(226, 232, 240, 0.9);
-  border-radius: 28px;
-  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 4px 10px -2px rgba(0, 0, 0, 0.02);
+/* Dynamic Ambient Glows */
+.ambient-glow-purple {
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(109, 40, 217, 0.05) 50%, transparent 80%);
+}
+
+.ambient-glow-cyan {
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.12) 0%, rgba(14, 116, 144, 0.04) 50%, transparent 80%);
+}
+
+.ambient-glow-emerald {
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, rgba(5, 150, 105, 0.04) 50%, transparent 80%);
+}
+
+/* Modern Behance / Linear Glass Cards */
+.modern-card {
+  background: rgba(15, 17, 28, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.wix-card:hover {
-  border-color: #cbd5e1;
+.modern-card:hover {
+  border-color: rgba(168, 85, 247, 0.35);
   transform: translateY(-4px);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 20px 40px -15px rgba(139, 92, 246, 0.2);
 }
 
-.wix-card-dark {
-  background: #0b1120;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 28px;
+.modern-card-featured {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.9) 0%, rgba(91, 33, 182, 0.95) 100%);
+  border: 1px solid rgba(216, 180, 254, 0.3);
+  border-radius: 24px;
   color: #ffffff;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 25px 50px -12px rgba(124, 58, 237, 0.4);
 }
 
-/* Studio Pill Buttons */
-.wix-btn-primary {
-  background: #090d16;
+/* Category Tag Pill */
+.category-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #c084fc;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Buttons */
+.btn-primary-glow {
+  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
   color: #ffffff;
   border-radius: 9999px;
   font-weight: 700;
+  border: 1px solid rgba(216, 180, 254, 0.3);
+  box-shadow: 0 10px 25px -5px rgba(124, 58, 237, 0.5);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.wix-btn-primary:hover {
-  background: #1e293b;
-  transform: scale(1.03);
-  box-shadow: 0 12px 25px -8px rgba(0, 0, 0, 0.35);
+.btn-primary-glow:hover {
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  box-shadow: 0 15px 35px -5px rgba(139, 92, 246, 0.65);
+  transform: translateY(-2px) scale(1.02);
 }
 
-.wix-btn-green {
+.btn-whatsapp-glow {
   background: linear-gradient(135deg, #10b981 0%, #059669 100%);
   color: #ffffff;
   border-radius: 9999px;
   font-weight: 700;
-  transition: all 0.25s ease;
+  border: 1px solid rgba(110, 231, 183, 0.3);
   box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.4);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.wix-btn-green:hover {
+.btn-whatsapp-glow:hover {
   background: linear-gradient(135deg, #059669 0%, #047857 100%);
-  transform: scale(1.03);
-  box-shadow: 0 15px 30px -5px rgba(16, 185, 129, 0.5);
+  box-shadow: 0 15px 35px -5px rgba(16, 185, 129, 0.6);
+  transform: translateY(-2px) scale(1.02);
 }
 
-.wix-btn-secondary {
-  background: #ffffff;
-  color: #0f172a;
-  border: 1.5px solid #e2e8f0;
+.btn-secondary-dark {
+  background: rgba(255, 255, 255, 0.05);
+  color: #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 9999px;
-  font-weight: 700;
+  font-weight: 600;
   transition: all 0.2s ease;
 }
 
-.wix-btn-secondary:hover {
-  border-color: #090d16;
-  background: #f8fafc;
+.btn-secondary-dark:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  transform: translateY(-2px);
 }
 
-/* Gradients & Backdrops */
-.bg-mesh-light {
-  background-color: #ffffff;
-  background-image: 
-    radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.08) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(16, 185, 129, 0.08) 0px, transparent 50%),
-    radial-gradient(at 50% 100%, rgba(244, 63, 94, 0.05) 0px, transparent 50%);
+/* Subtle dot grid pattern */
+.bg-grid-subtle {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 32px 32px;
 }
 
-.browser-mockup {
-  border-radius: 20px;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.15);
-  overflow: hidden;
+/* Dynamic pulse animation */
+@keyframes ambient-float {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-15px) scale(1.04);
+  }
+}
+
+.animate-ambient-float {
+  animation: ambient-float 8s ease-in-out infinite;
 }
 
 /* Custom Scrollbars */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #090a12;
 }
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 4px;
+  background: #1e2238;
+  border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #373d61;
 }

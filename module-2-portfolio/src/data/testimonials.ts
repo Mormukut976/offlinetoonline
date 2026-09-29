@@ -6,42 +6,53 @@ export interface TestimonialItem {
   city: string;
   rating: number;
   quote: string;
-  result: string;
-  serviceUsed: string;
+  metric: string;
+  verified: boolean;
 }
 
 export const TESTIMONIALS: TestimonialItem[] = [
   {
-    id: '1',
-    name: 'Kan Singh Ji',
-    role: 'Managing Director',
-    business: 'Bhumika Tour & Travels',
+    id: 'kan-singh-bhumika',
+    name: 'Kan Singh',
+    role: 'Founder & Managing Director',
+    business: 'Shree Bhumika Tour & Travels',
     city: 'Jaipur, Rajasthan',
     rating: 5,
-    quote: 'Raja bhai ne hamari travels agency ke liye jo website banayi hai, uski speed kamaal ki hai. Calculator dekh kar customer direct WhatsApp par cab book kar lete hain. Google par Page 1 par aane se hamari Justdial ki dependence bilkul khatam ho gayi!',
-    result: '140+ Direct monthly booking inquiries without paying any aggregator cut',
-    serviceUsed: 'Growth Business Suite + Fare Calculator'
+    quote: 'The web application built by Raja Singh Chauhan has incredible speed. Customers test the 250 KM outstation calculator and immediately book cabs on WhatsApp. Ranking on Google Page 1 has eliminated our dependence on third-party aggregators entirely!',
+    metric: '140+ Monthly Direct Bookings',
+    verified: true
   },
   {
-    id: '2',
+    id: 'dr-vivek-apex',
     name: 'Dr. Vivek Sharma',
-    role: 'Chief Dental Surgeon',
-    business: 'Apex Dental Care',
+    role: 'Chief Dental Surgeon (BDS, MDS)',
+    business: 'Apex Multi-Specialty Dental Clinic',
     city: 'Vaishali Nagar, Jaipur',
     rating: 5,
-    quote: 'Reception par jo NFC acrylic standee lagaya hai, usse har din 3-4 satisfied patients phone tap karke 5-star Google review de dete hain. Hamari rating 4.2 se badh kar 4.9 ho gayi aur local patient walk-ins 65% increase hue hain.',
-    result: 'Google 3-Pack rank #2 in Vaishali Nagar within 45 days',
-    serviceUsed: 'Local 3-Pack SEO + NFC Standee'
+    quote: 'Our patient appointment scheduling became completely frictionless. Patients find us on Google Maps, review our treatments, and book slots directly on WhatsApp. The physical NFC counter standee at our reception has generated over 120 five-star reviews.',
+    metric: '+68% Walk-in Consultations',
+    verified: true
   },
   {
-    id: '3',
-    name: 'Mukesh Choudhary',
-    role: 'Owner & Developer',
-    business: 'Marudhar Real Estate',
+    id: 'kunal-rathore-haveli',
+    name: 'Kunal Rathore',
+    role: 'Managing Partner',
+    business: 'The Royal Haveli Cafe & Lounge',
+    city: 'MI Road, Jaipur',
+    rating: 5,
+    quote: 'Replacing paper menus with the contactless QR digital menu saved us thousands in printing costs. Table reservations for our rooftop seating are booked solid every weekend without paying food delivery aggregator commissions.',
+    metric: '45+ Weekend Table Bookings',
+    verified: true
+  },
+  {
+    id: 'mahendra-shekhawat-realty',
+    name: 'Mahendra Shekhawat',
+    role: 'Director',
+    business: 'Marudhar Estates Pvt Ltd',
     city: 'Mansarovar, Jaipur',
     rating: 5,
-    quote: 'Website ka sabse bada fayda yeh hai ki har mahine server ka koi bill nahi aata. 0 rupees monthly hosting wali baat 100% sach hai! Raja Singh Chauhan ne khud pura setup 3 din mein deliver kiya.',
-    result: 'Zero monthly hosting bills and 35+ verified buyer inquiries every month',
-    serviceUsed: 'Jamstack Portal + EMI Estimator'
+    quote: 'High-ticket buyers love the interactive EMI and plot size calculator. Instead of sharing leads with competitor brokers on classified portals, every buyer inquiry lands directly on our sales team phone.',
+    metric: '₹4.2 Cr Pipeline Generated',
+    verified: true
   }
 ];

@@ -1,7 +1,9 @@
+'use client';
+
 import React from 'react';
-import InteractiveROICalculator from '@/components/pricing/InteractiveROICalculator';
-import CTASection from '@/components/home/CTASection';
-import { Calculator, CheckCircle2, ShieldCheck, Sparkles } from 'lucide-react';
+import BusinessROICalculator from '@/components/home/BusinessROICalculator';
+import AgencyContact from '@/components/home/AgencyContact';
+import { Calculator, CheckCircle2, ShieldCheck, Sparkles, Zap } from 'lucide-react';
 
 export default function CalculatorPage() {
   return (
@@ -10,55 +12,56 @@ export default function CalculatorPage() {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
-          <span className="text-xs font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-            Live Interactive Engines
+          <span className="category-pill">
+            <Calculator className="w-3.5 h-3.5 text-emerald-400" />
+            <span>INTERACTIVE BUSINESS CALCULATORS</span>
           </span>
-          <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
-            Test Dynamic Business Calculators
+          <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight font-heading">
+            Live Dynamic Business Engines
           </h1>
-          <p className="text-slate-400 text-sm sm:text-base">
-            Experience the exact tools we code into our client websites. They answer customer questions instantly and turn random visitors into paid WhatsApp bookings.
+          <p className="text-slate-300 text-sm sm:text-base">
+            Test the interactive mathematical engines we engineer for our client web apps. They answer customer questions instantly and turn search traffic into paid bookings.
           </p>
         </div>
 
-        <InteractiveROICalculator />
+        <BusinessROICalculator />
 
         {/* Benefits of interactive calculators */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-12">
-          <div className="glass-card p-6 rounded-2xl space-y-3">
-            <div className="w-10 h-10 rounded-xl bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-indigo-400">
+          <div className="modern-card p-6 bg-[#0e101c] border-white/10 space-y-3">
+            <div className="w-10 h-10 rounded-xl bg-violet-600/20 border border-violet-500/30 flex items-center justify-center text-violet-400">
               <Sparkles className="w-5 h-5" />
             </div>
-            <h3 className="text-base font-bold text-white">Instant Trust & Price Transparency</h3>
+            <h3 className="text-base font-bold text-white font-heading">Price Transparency & Instant Trust</h3>
             <p className="text-xs text-slate-400 leading-relaxed">
-              Customers hate calling 5 different agencies just to ask per-KM rates. Giving them an instant breakdown makes you the #1 preferred choice immediately.
+              Customers avoid calling 5 different competitors just to ask rates. Giving them an instant quotation builds instant credibility.
             </p>
           </div>
 
-          <div className="glass-card p-6 rounded-2xl space-y-3">
+          <div className="modern-card p-6 bg-[#0e101c] border-white/10 space-y-3">
             <div className="w-10 h-10 rounded-xl bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
               <CheckCircle2 className="w-5 h-5" />
             </div>
-            <h3 className="text-base font-bold text-white">Pre-Filled WhatsApp Inquiries</h3>
+            <h3 className="text-base font-bold text-white font-heading">Pre-Filled WhatsApp Routing</h3>
             <p className="text-xs text-slate-400 leading-relaxed">
-              The calculator formats the customer's pickup date, car preference, and expected price into a ready message so you close sales in 60 seconds on WhatsApp.
+              Customer selections format directly into a structured WhatsApp message, allowing your team to close inquiries within 60 seconds.
             </p>
           </div>
 
-          <div className="glass-card p-6 rounded-2xl space-y-3">
-            <div className="w-10 h-10 rounded-xl bg-teal-600/20 border border-teal-500/30 flex items-center justify-center text-teal-400">
+          <div className="modern-card p-6 bg-[#0e101c] border-white/10 space-y-3">
+            <div className="w-10 h-10 rounded-xl bg-cyan-600/20 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
               <ShieldCheck className="w-5 h-5" />
             </div>
-            <h3 className="text-base font-bold text-white">Custom Business Logic</h3>
+            <h3 className="text-base font-bold text-white font-heading">Custom Industry Algorithms</h3>
             <p className="text-xs text-slate-400 leading-relaxed">
-              Whether you need Rajasthan's 250 KM rule, clinic appointment advance slot deposits, or property EMI calculations, we code the custom rules specifically for you.
+              Whether you need Rajasthan 250 KM taxi rules, clinic slot scheduling deposits, or mortgage EMI logic, we code tailored rules for your firm.
             </p>
           </div>
         </div>
 
       </div>
 
-      <CTASection />
+      <AgencyContact />
     </div>
   );
 }
