@@ -192,21 +192,25 @@ export default function AgencyHero() {
 
           </div>
 
-          {/* Floating Accents */}
-          <div className="hidden lg:block absolute -left-8 top-1/2 -translate-y-1/2 p-3.5 rounded-2xl bg-[#151828]/90 border border-violet-500/30 backdrop-blur-md shadow-xl text-xs font-bold text-white space-y-1">
-            <div className="flex items-center gap-2 text-violet-400">
-              <Sparkles className="w-4 h-4" />
-              <span>Full Code Ownership</span>
+          {/* Floating Accents - Perfectly Positioned at Top & Bottom Rims Without Overlapping Cards */}
+          <div className="hidden sm:flex items-center gap-2.5 absolute -top-5 left-6 lg:left-10 z-20 px-4 py-2.5 rounded-2xl bg-[#0f1224]/95 border border-violet-500/40 backdrop-blur-xl shadow-2xl shadow-violet-950/50 text-xs font-bold text-white">
+            <div className="w-6 h-6 rounded-lg bg-violet-500/20 flex items-center justify-center text-violet-400">
+              <Sparkles className="w-3.5 h-3.5" />
             </div>
-            <p className="text-[10px] text-slate-400 font-normal">No monthly agency lock-in</p>
+            <div>
+              <div className="text-white font-bold leading-tight">100% Code Ownership</div>
+              <div className="text-[10px] text-slate-400 font-medium">Zero agency lock-in</div>
+            </div>
           </div>
 
-          <div className="hidden lg:block absolute -right-8 top-1/3 p-3.5 rounded-2xl bg-[#151828]/90 border border-emerald-500/30 backdrop-blur-md shadow-xl text-xs font-bold text-white space-y-1">
-            <div className="flex items-center gap-2 text-emerald-400">
-              <ShieldCheck className="w-4 h-4" />
-              <span>₹0 Monthly Server</span>
+          <div className="hidden sm:flex items-center gap-2.5 absolute -bottom-5 right-6 lg:right-10 z-20 px-4 py-2.5 rounded-2xl bg-[#0f1224]/95 border border-emerald-500/40 backdrop-blur-xl shadow-2xl shadow-emerald-950/50 text-xs font-bold text-white">
+            <div className="w-6 h-6 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400">
+              <ShieldCheck className="w-3.5 h-3.5" />
             </div>
-            <p className="text-[10px] text-slate-400 font-normal">Cloudflare & Netlify Edge</p>
+            <div>
+              <div className="text-white font-bold leading-tight">₹0 Monthly Server</div>
+              <div className="text-[10px] text-slate-400 font-medium">Cloudflare &amp; Netlify Edge</div>
+            </div>
           </div>
 
         </div>
