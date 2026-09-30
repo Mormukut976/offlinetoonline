@@ -59,18 +59,23 @@ export default async function DashboardPage() {
 
   return (
     <div className="space-y-8 max-w-7xl mx-auto pb-12">
-      {/* Welcome Banner */}
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-indigo-900/60 via-slate-900 to-slate-900 border border-indigo-500/20 p-8 shadow-2xl">
+      {/* Welcome Banner with Divine Glassmorphism */}
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-indigo-950/60 via-slate-900/70 to-slate-950/80 backdrop-blur-xl border border-indigo-500/25 p-8 shadow-2xl">
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div className="space-y-2">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
-              <Sparkles className="w-3.5 h-3.5" />
-              Founder Operating System • Jaipur Central
+          <div className="space-y-2.5">
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-500/15 text-amber-300 border border-amber-500/30">
+                <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+                ॥ श्री राधा कृष्णा ॥
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+                Founder Operating System • Jaipur Central
+              </span>
             </div>
-            <h1 className="text-3xl font-extrabold text-white tracking-tight">
+            <h1 className="text-3xl font-black text-white tracking-tight">
               Agency Command Center
             </h1>
-            <p className="text-slate-300 text-sm max-w-2xl">
+            <p className="text-slate-300 text-sm max-w-2xl leading-relaxed">
               Dominating Pan-India local business digital transformations across 28 states & 100+ commercial hubs. Verified live proof:{" "}
               <a
                 href="https://bhumikatourandtravels.world/"
@@ -86,21 +91,21 @@ export default async function DashboardPage() {
           <div className="flex flex-wrap items-center gap-3">
             <Link
               href="/scripts"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-xs shadow-lg shadow-indigo-600/30 transition-all"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs shadow-lg shadow-indigo-600/30 transition-all hover:scale-102"
             >
               <SearchCode className="w-4 h-4" />
               Scrape New Leads
             </Link>
             <Link
               href="/quotation"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-medium text-xs border border-slate-700 transition-all"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 text-white font-medium text-xs border border-white/10 transition-all backdrop-blur-md"
             >
               <FilePlus className="w-4 h-4 text-amber-400" />
               Create Quotation
             </Link>
           </div>
         </div>
-        <div className="absolute right-0 top-0 -mt-10 -mr-10 w-80 h-80 rounded-full bg-indigo-600/10 blur-3xl pointer-events-none" />
+        <div className="absolute right-0 top-0 -mt-10 -mr-10 w-96 h-96 rounded-full bg-indigo-600/10 blur-3xl pointer-events-none" />
       </div>
 
       {/* KPI Cards Grid */}

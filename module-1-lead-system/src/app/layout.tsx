@@ -15,9 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className="bg-[#090D16] text-slate-100 antialiased flex min-h-screen">
+      <body className="bg-krishna-theme text-slate-100 antialiased flex min-h-screen">
         <Sidebar />
-        <div className="flex-1 ml-64 flex flex-col min-h-screen">
+        <div className="flex-1 ml-64 flex flex-col min-h-screen relative z-10">
           <Header />
           <main className="flex-1 p-8 overflow-y-auto">
             {children}
