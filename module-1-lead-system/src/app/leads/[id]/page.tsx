@@ -22,7 +22,8 @@ import {
   Check,
   Cpu,
   Flame,
-  SearchCode
+  SearchCode,
+  Kanban
 } from "lucide-react";
 import { WHATSAPP_TEMPLATES } from "@/data/templates/whatsapp";
 import { formatDate } from "@/lib/utils";
@@ -86,6 +87,34 @@ export default function LeadDetailPage() {
       const data = await res.json();
       if (data.success) {
         setLead(data.data);
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+    const handleSendToProduction = async () => {
+    if (!lead) return;
+    try {
+      const res = await fetch("/api/projects", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          clientName: lead.businessName,
+          projectType: `${lead.category.replace("_", " ")} Website + Local SEO`,
+          price: 9999,
+          paidAmount: 5000,
+          status: "pending",
+          onboardingData: {
+            clientPhone: lead.phone,
+            liveUrl: lead.website || "",
+            checklist: { intake: false, design: false, development: false, whatsapp: false, payment: false }
+          }
+        })
+      });
+      const data = await res.json();
+      if (data.success) {
+        router.push("/production");
       }
     } catch (err) {
       console.error(err);
@@ -293,6 +322,15 @@ export default function LeadDetailPage() {
             <option value="converted">🟢 Converted / Deal Closed</option>
             <option value="rejected">⚪ Rejected / Not Interested</option>
           </select>
+          {lead.status === "converted" && (
+            <button
+              onClick={handleSendToProduction}
+              className="mt-1.5 px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold shadow-lg shadow-emerald-600/30 flex items-center gap-1.5 transition-all"
+            >
+              <Kanban className="w-3.5 h-3.5" />
+              🚀 Send to Production
+            </button>
+          )}
         </div>
       </div>
 
