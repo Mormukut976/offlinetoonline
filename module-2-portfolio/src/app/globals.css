@@ -25,7 +25,13 @@ body {
 /* High Contrast Headings with Rich Readability Shadow */
 h1, h2, h3, h4 {
   font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9), 0 1px 3px rgba(0, 0, 0, 0.95);
+}
+
+/* Ensure gradient text never gets darkened by shadows */
+.bg-clip-text,
+[class*="bg-clip-text"] {
+  text-shadow: none !important;
+  -webkit-text-fill-color: transparent !important;
 }
 
 .text-readable-contrast {
