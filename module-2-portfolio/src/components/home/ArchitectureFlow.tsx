@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { Layers, ArrowRight, Search, Code2, Rocket, CheckCircle2, Cpu, Globe, MessageSquare, Zap, BarChart3, TrendingUp } from 'lucide-react';
 
 export default function ArchitectureFlow() {
@@ -106,7 +107,35 @@ export default function ArchitectureFlow() {
               <div className="font-bold text-white text-sm">Direct Bank / UPI</div>
               <p className="text-[11px] text-slate-300">Confirmed booking deposit with 0% aggregator cut.</p>
             </div>
+          </div>
+        </div>
 
+        {/* 3D Global Edge Infrastructure Blueprint Visualizer */}
+        <div className="relative rounded-3xl overflow-hidden modern-card border border-white/15 p-2 sm:p-3 shadow-2xl group">
+          <div className="relative h-64 sm:h-96 lg:h-[460px] w-full rounded-2xl overflow-hidden bg-[#0a0d18]">
+            <Image
+              src="/wallpapers/architecture-bg.jpg"
+              alt="O2O Digital Jamstack Cloud Architecture Blueprint"
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-700" loading="eager" priority
+              sizes="(max-width: 1200px) 100vw, 1200px"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#070913]/90 via-transparent to-black/20"></div>
+            
+            <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 right-4 sm:right-6 flex flex-wrap items-center justify-between gap-3">
+              <div className="flex items-center gap-2">
+                <span className="px-3.5 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-violet-500/40 text-violet-300 text-xs font-bold flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                  Jamstack Global Edge Topology Active
+                </span>
+                <span className="hidden sm:inline-flex px-3.5 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-slate-300 text-xs font-semibold">
+                  99.99% Uptime • ₹0 Server Bills
+                </span>
+              </div>
+              <span className="text-[11px] font-mono text-cyan-400 bg-black/70 px-3 py-1 rounded-full border border-cyan-500/30">
+                Latency: &lt; 24ms Worldwide
+              </span>
+            </div>
           </div>
         </div>
 

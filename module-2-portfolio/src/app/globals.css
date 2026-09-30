@@ -2,19 +2,17 @@
 @import "tailwindcss";
 
 :root {
-  --background: #090a12;
+  --background: #070913;
   --foreground: #f8fafc;
 }
 
 body {
-  background-color: #080a12;
+  background-color: #070913;
   background-image: 
-    linear-gradient(to bottom, rgba(8, 10, 18, 0.58) 0%, rgba(8, 10, 18, 0.72) 45%, rgba(8, 10, 18, 0.85) 100%),
-    url('/tech-bg.jpg');
-  background-size: cover;
-  background-position: center top;
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(120, 119, 198, 0.15), transparent),
+    radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 100% 100%, 32px 32px;
   background-attachment: fixed;
-  background-repeat: no-repeat;
   color: #f1f5f9;
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   overflow-x: hidden;
@@ -22,20 +20,17 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* High Contrast Headings with Rich Readability Shadow */
+/* High Contrast Headings */
 h1, h2, h3, h4 {
   font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: -0.02em;
 }
 
-/* Ensure gradient text never gets darkened by shadows */
+/* Ensure gradient text is 100% bright and vibrant */
 .bg-clip-text,
 [class*="bg-clip-text"] {
   text-shadow: none !important;
   -webkit-text-fill-color: transparent !important;
-}
-
-.text-readable-contrast {
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85), 0 1px 2px rgba(0, 0, 0, 0.9);
 }
 
 .font-heading {
@@ -46,110 +41,74 @@ h1, h2, h3, h4 {
   font-family: 'JetBrains Mono', monospace;
 }
 
-/* Dynamic Ambient Glows */
+/* Dynamic Ambient Glows (Linear & Stripe Style) */
 .ambient-glow-purple {
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(109, 40, 217, 0.05) 50%, transparent 80%);
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.18) 0%, rgba(109, 40, 217, 0.06) 50%, transparent 80%);
 }
 
 .ambient-glow-cyan {
-  background: radial-gradient(circle, rgba(6, 182, 212, 0.12) 0%, rgba(14, 116, 144, 0.04) 50%, transparent 80%);
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.16) 0%, rgba(14, 116, 144, 0.05) 50%, transparent 80%);
 }
 
 .ambient-glow-emerald {
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, rgba(5, 150, 105, 0.04) 50%, transparent 80%);
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.16) 0%, rgba(5, 150, 105, 0.05) 50%, transparent 80%);
 }
 
-/* Topic-Matched Section Wallpapers with Dark Gradient Overlays */
+/* Clean, Sleek Section Backgrounds with Subtle Contrast & Glows */
 .bg-section-architecture {
-  background-color: #080a14;
-  background-image: 
-    linear-gradient(to bottom, rgba(8, 10, 18, 0.78) 0%, rgba(8, 10, 18, 0.65) 45%, rgba(8, 10, 18, 0.88) 100%),
-    url('/wallpapers/architecture-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  background: linear-gradient(180deg, rgba(8, 10, 20, 0.6) 0%, rgba(11, 14, 28, 0.8) 50%, rgba(8, 10, 20, 0.6) 100%);
+  position: relative;
 }
 
 .bg-section-services {
-  background-color: #080a14;
-  background-image: 
-    linear-gradient(to bottom, rgba(8, 10, 18, 0.76) 0%, rgba(8, 10, 18, 0.62) 45%, rgba(8, 10, 18, 0.88) 100%),
-    url('/wallpapers/services-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  background: linear-gradient(180deg, rgba(8, 10, 20, 0.4) 0%, rgba(10, 13, 26, 0.75) 50%, rgba(8, 10, 20, 0.4) 100%);
+  position: relative;
 }
 
 .bg-section-portfolio {
-  background-color: #080a14;
-  background-image: 
-    linear-gradient(to bottom, rgba(8, 10, 18, 0.76) 0%, rgba(8, 10, 18, 0.60) 45%, rgba(8, 10, 18, 0.88) 100%),
-    url('/wallpapers/portfolio-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  background: linear-gradient(180deg, rgba(8, 10, 20, 0.6) 0%, rgba(12, 15, 30, 0.8) 50%, rgba(8, 10, 20, 0.6) 100%);
+  position: relative;
 }
 
 .bg-section-calculator {
-  background-color: #080a14;
-  background-image: 
-    linear-gradient(to bottom, rgba(8, 10, 18, 0.78) 0%, rgba(8, 10, 18, 0.62) 45%, rgba(8, 10, 18, 0.88) 100%),
-    url('/wallpapers/calculator-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  background: linear-gradient(180deg, rgba(8, 10, 20, 0.4) 0%, rgba(9, 14, 25, 0.75) 50%, rgba(8, 10, 20, 0.4) 100%);
+  position: relative;
 }
 
 .bg-section-pricing {
-  background-color: #080a14;
-  background-image: 
-    linear-gradient(to bottom, rgba(8, 10, 18, 0.78) 0%, rgba(8, 10, 18, 0.62) 45%, rgba(8, 10, 18, 0.88) 100%),
-    url('/wallpapers/pricing-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  background: linear-gradient(180deg, rgba(8, 10, 20, 0.6) 0%, rgba(11, 15, 30, 0.8) 50%, rgba(8, 10, 20, 0.6) 100%);
+  position: relative;
 }
 
 .bg-section-contact {
-  background-color: #080a14;
-  background-image: 
-    linear-gradient(to bottom, rgba(8, 10, 18, 0.76) 0%, rgba(8, 10, 18, 0.62) 45%, rgba(8, 10, 18, 0.88) 100%),
-    url('/wallpapers/contact-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  background: linear-gradient(180deg, rgba(8, 10, 20, 0.4) 0%, rgba(12, 14, 28, 0.85) 50%, rgba(8, 10, 20, 0.6) 100%);
+  position: relative;
 }
 
-/* Modern Glass Cards - Transparent Frosted with Readability Contrast */
+/* Modern Behance / Linear Glass Cards */
 .modern-card {
-  background: rgba(11, 15, 28, 0.60);
+  background: rgba(13, 17, 34, 0.65);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: 24px;
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .modern-card:hover {
-  background: rgba(14, 19, 36, 0.72);
-  border-color: rgba(168, 85, 247, 0.45);
+  background: rgba(18, 23, 46, 0.75);
+  border-color: rgba(168, 85, 247, 0.35);
   transform: translateY(-4px);
-  box-shadow: 0 20px 40px -15px rgba(139, 92, 246, 0.25);
+  box-shadow: 0 20px 40px -15px rgba(139, 92, 246, 0.2);
 }
 
 .modern-card-featured {
-  background: linear-gradient(135deg, rgba(124, 58, 237, 0.88) 0%, rgba(91, 33, 182, 0.94) 100%);
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.90) 0%, rgba(91, 33, 182, 0.95) 100%);
   border: 1px solid rgba(216, 180, 254, 0.35);
   border-radius: 24px;
   color: #ffffff;
-  box-shadow: 0 25px 50px -12px rgba(124, 58, 237, 0.45);
+  box-shadow: 0 25px 50px -12px rgba(124, 58, 237, 0.4);
 }
 
 /* Category Tag Pill */
@@ -159,16 +118,13 @@ h1, h2, h3, h4 {
   gap: 6px;
   padding: 6px 14px;
   border-radius: 9999px;
-  background: rgba(8, 11, 22, 0.75);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   color: #c084fc;
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 /* Buttons */
@@ -205,25 +161,24 @@ h1, h2, h3, h4 {
 }
 
 .btn-secondary-dark {
-  background: rgba(11, 15, 28, 0.7);
-  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.05);
   color: #e2e8f0;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 9999px;
   font-weight: 600;
   transition: all 0.2s ease;
 }
 
 .btn-secondary-dark:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.25);
   color: #ffffff;
   transform: translateY(-2px);
 }
 
 /* Subtle dot grid pattern */
 .bg-grid-subtle {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
   background-size: 32px 32px;
 }
 
@@ -233,7 +188,7 @@ h1, h2, h3, h4 {
   height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #090a12;
+  background: #070913;
 }
 ::-webkit-scrollbar-thumb {
   background: #1e2238;
