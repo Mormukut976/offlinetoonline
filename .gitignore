@@ -10,3 +10,4 @@ backups/
 *.mp4
 *.mov
 1440.mp4
+.netlify/

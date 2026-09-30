@@ -14,9 +14,10 @@ import {
   MapPin,
   Sparkles,
   Download,
-  Upload
+  Upload,
+  SearchCode
 } from "lucide-react";
-import { ALL_CITIES } from "@/data/cities";
+import { STATES, ALL_CITIES } from "@/data/cities";
 import { CATEGORIES } from "@/data/categories";
 import { WHATSAPP_TEMPLATES } from "@/data/templates/whatsapp";
 
@@ -151,11 +152,19 @@ export default function LeadsPage() {
             Leads Database & CRM
           </h1>
           <p className="text-xs text-slate-400 mt-1">
-            Tracking {leads.length} local business prospects across North India
+            Tracking {leads.length} local business prospects across 28 Indian States & 100+ Commercial Hubs
           </p>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2.5">
+          <Link
+            href="/scripts"
+            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 transition-all"
+          >
+            <SearchCode className="w-4 h-4 text-indigo-400" />
+            Scan / Import
+          </Link>
+
           <button
             onClick={exportCSV}
             className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 transition-all"
@@ -163,6 +172,7 @@ export default function LeadsPage() {
             <Download className="w-4 h-4 text-emerald-400" />
             Export CSV
           </button>
+
           <button
             onClick={() => setIsModalOpen(true)}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-white bg-indigo-600 hover:bg-indigo-500 shadow-lg shadow-indigo-600/25 transition-all"
@@ -191,15 +201,16 @@ export default function LeadsPage() {
           onChange={(e) => setSelectedCity(e.target.value)}
           className="w-full px-3 py-2 bg-slate-900 border border-slate-700/80 rounded-xl text-xs text-white focus:outline-none focus:border-indigo-500"
         >
-          <option value="all">All Cities (North India)</option>
-          <option value="Jaipur">Jaipur (Central)</option>
-          <option value="Jodhpur">Jodhpur</option>
-          <option value="Udaipur">Udaipur</option>
-          <option value="Kota">Kota</option>
-          <option value="New Delhi">New Delhi</option>
-          <option value="Gurgaon">Gurgaon</option>
-          <option value="Noida">Noida</option>
-          <option value="Ahmedabad">Ahmedabad</option>
+          <option value="all">All Cities (Pan-India)</option>
+          {Object.entries(STATES).map(([stKey, stData]) => (
+            <optgroup key={stKey} label={stData.name}>
+              {stData.cities.map((c) => (
+                <option key={c} value={c}>
+                  {c}
+                </option>
+              ))}
+            </optgroup>
+          ))}
         </select>
 
         <select
@@ -229,56 +240,64 @@ export default function LeadsPage() {
         </select>
       </div>
 
-      {/* Leads Table */}
+      {/* Table Card */}
       <div className="glass-card rounded-2xl border border-slate-800 overflow-hidden">
         <div className="overflow-x-auto">
-          <table className="w-full text-left border-collapse text-xs">
-            <thead>
-              <tr className="bg-slate-900/80 border-b border-slate-800 text-slate-400 uppercase tracking-wider text-[10px]">
-                <th className="py-3.5 px-4 font-semibold">Business & Owner</th>
-                <th className="py-3.5 px-4 font-semibold">Category</th>
-                <th className="py-3.5 px-4 font-semibold">Location</th>
-                <th className="py-3.5 px-4 font-semibold">Website Status</th>
-                <th className="py-3.5 px-4 font-semibold">Status</th>
-                <th className="py-3.5 px-4 font-semibold text-right">Actions</th>
+          <table className="w-full text-left text-xs">
+            <thead className="bg-[#0B0F19]/90 text-slate-400 font-semibold border-b border-slate-800">
+              <tr>
+                <th className="py-3 px-4">Business & Owner</th>
+                <th className="py-3 px-4">Category</th>
+                <th className="py-3 px-4">Contact Details</th>
+                <th className="py-3 px-4">Location</th>
+                <th className="py-3 px-4">Website</th>
+                <th className="py-3 px-4">Status</th>
+                <th className="py-3 px-4 text-right">Actions</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-800/60">
               {loading ? (
                 <tr>
-                  <td colSpan={6} className="py-12 text-center text-slate-500">
-                    Loading verified leads...
+                  <td colSpan={7} className="py-12 text-center text-slate-500">
+                    Loading CRM database records...
                   </td>
                 </tr>
               ) : leads.length === 0 ? (
                 <tr>
-                  <td colSpan={6} className="py-12 text-center text-slate-500">
-                    No leads match your filter criteria. Try clicking "Scrape Leads" to fetch fresh data!
+                  <td colSpan={7} className="py-12 text-center text-slate-500">
+                    No leads found matching current filters. Use &quot;Scan / Import&quot; to discover fresh prospects.
                   </td>
                 </tr>
               ) : (
                 leads.map((lead) => (
-                  <tr key={lead.id} className="hover:bg-slate-800/30 transition-colors group">
+                  <tr key={lead.id} className="hover:bg-slate-900/30 transition-colors">
                     <td className="py-3.5 px-4">
-                      <Link href={`/leads/${lead.id}`} className="font-semibold text-white hover:text-indigo-400 text-sm block">
+                      <Link
+                        href={`/leads/${lead.id}`}
+                        className="font-bold text-white hover:text-indigo-400 transition-colors block text-[13px]"
+                      >
                         {lead.businessName}
                       </Link>
-                      <span className="text-[11px] text-slate-400">
-                        {lead.ownerName ? `👤 ${lead.ownerName}` : lead.phone}
-                      </span>
+                      <p className="text-[11px] text-slate-400 mt-0.5">
+                        {lead.ownerName || "Owner unassigned"}
+                      </p>
                     </td>
                     <td className="py-3.5 px-4">
                       <span className="capitalize text-slate-300 font-medium">
                         {lead.category.replace("_", " ")}
                       </span>
                     </td>
+                    <td className="py-3.5 px-4 font-mono text-slate-300">
+                      <div>{lead.phone}</div>
+                      {lead.email && <div className="text-[10px] text-slate-500 font-sans">{lead.email}</div>}
+                    </td>
                     <td className="py-3.5 px-4">
-                      <p className="text-slate-300 font-medium flex items-center gap-1">
-                        <MapPin className="w-3.5 h-3.5 text-indigo-400" />
-                        {lead.city}
-                      </p>
+                      <span className="inline-flex items-center gap-1 text-slate-300">
+                        <MapPin className="w-3 h-3 text-slate-500" />
+                        {lead.city}, {lead.state}
+                      </span>
                       <p className="text-[11px] text-slate-500 truncate max-w-[180px]">
-                        {lead.address || "North India"}
+                        {lead.address || "Local Commercial Area"}
                       </p>
                     </td>
                     <td className="py-3.5 px-4">
@@ -352,7 +371,7 @@ export default function LeadsPage() {
                   <input
                     type="text"
                     required
-                    placeholder="e.g. Rajputana Tours"
+                    placeholder="e.g. Bandra Travel Hub"
                     value={newLead.businessName}
                     onChange={(e) => setNewLead({ ...newLead, businessName: e.target.value })}
                     className="w-full px-3 py-2 bg-slate-900 border border-slate-800 rounded-xl text-white focus:outline-none focus:border-indigo-500"
@@ -376,7 +395,7 @@ export default function LeadsPage() {
                   <input
                     type="tel"
                     required
-                    placeholder="e.g. +91 98286 12345"
+                    placeholder="e.g. +91 98201 12345"
                     value={newLead.phone}
                     onChange={(e) => setNewLead({ ...newLead, phone: e.target.value })}
                     className="w-full px-3 py-2 bg-slate-900 border border-slate-800 rounded-xl text-white focus:outline-none focus:border-indigo-500"
@@ -416,21 +435,20 @@ export default function LeadsPage() {
                     onChange={(e) => setNewLead({ ...newLead, city: e.target.value })}
                     className="w-full px-3 py-2 bg-slate-900 border border-slate-800 rounded-xl text-white focus:outline-none focus:border-indigo-500"
                   >
-                    <option value="Jaipur">Jaipur</option>
-                    <option value="Jodhpur">Jodhpur</option>
-                    <option value="Udaipur">Udaipur</option>
-                    <option value="Kota">Kota</option>
-                    <option value="New Delhi">New Delhi</option>
-                    <option value="Gurgaon">Gurgaon</option>
+                    {ALL_CITIES.map((c) => (
+                      <option key={c} value={c}>
+                        {c}
+                      </option>
+                    ))}
                   </select>
                 </div>
               </div>
 
               <div>
-                <label className="text-slate-400 font-medium block mb-1">Address / Locality</label>
+                <label className="text-slate-400 font-medium block mb-1">Address / Commercial Locality</label>
                 <input
                   type="text"
-                  placeholder="e.g. M.I. Road, Sindhi Camp, Jaipur"
+                  placeholder="e.g. BKC Commercial Hub, Bandra West"
                   value={newLead.address}
                   onChange={(e) => setNewLead({ ...newLead, address: e.target.value })}
                   className="w-full px-3 py-2 bg-slate-900 border border-slate-800 rounded-xl text-white focus:outline-none focus:border-indigo-500"

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Plus, SearchCode, FilePlus, Sparkles, PhoneCall } from "lucide-react";
+import { Plus, SearchCode, FilePlus, Sparkles, Upload } from "lucide-react";
 
 export function Header() {
   return (
@@ -10,11 +10,11 @@ export function Header() {
       <div className="flex items-center gap-3">
         <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-          North India Engine Active
+          Pan-India Engine Active
         </span>
         <span className="text-xs text-slate-500 hidden sm:inline">•</span>
         <span className="text-xs text-slate-400 hidden sm:inline">
-          Coverage: Rajasthan, Delhi NCR, Haryana, Gujarat
+          Coverage: All 28 Indian States & 100+ Commercial Cities
         </span>
       </div>
 
@@ -25,7 +25,7 @@ export function Header() {
           className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 transition-colors"
         >
           <SearchCode className="w-3.5 h-3.5 text-indigo-400" />
-          <span>Scrape Leads</span>
+          <span>Lead Engine</span>
         </Link>
 
         <Link

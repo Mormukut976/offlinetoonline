@@ -5,7 +5,7 @@ import { Header } from "@/components/layout/Header";
 
 export const metadata: Metadata = {
   title: "O2O Digital — Lead Gen & Business Production System",
-  description: "Internal operating command center for offline-to-online digital agency targeting North India local businesses."
+  description: "Internal operating command center for offline-to-online digital agency targeting offline businesses across India."
 };
 
 export default function RootLayout({

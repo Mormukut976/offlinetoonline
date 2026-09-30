@@ -71,7 +71,7 @@ export default async function DashboardPage() {
               Agency Command Center
             </h1>
             <p className="text-slate-300 text-sm max-w-2xl">
-              Dominating North India local business digital transformations. Verified live proof:{" "}
+              Dominating Pan-India local business digital transformations across 28 states & 100+ commercial hubs. Verified live proof:{" "}
               <a
                 href="https://bhumikatourandtravels.world/"
                 target="_blank"
