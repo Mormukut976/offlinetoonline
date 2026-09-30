@@ -5,7 +5,7 @@ import { Plus, SearchCode, FilePlus, Sparkles, Upload } from "lucide-react";
 
 export function Header() {
   return (
-    <header className="h-16 bg-[#080C14]/75 backdrop-blur-xl border-b border-white/5 sticky top-0 z-30 flex items-center justify-between px-8 shadow-sm">
+    <header className="h-16 bg-[#080C14]/40 backdrop-blur-xl border-b border-white/10 sticky top-0 z-30 flex items-center justify-between px-8 shadow-sm">
       {/* Title & Status with Divine Touch */}
       <div className="flex items-center gap-3">
         <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">

@@ -34,9 +34,9 @@ export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="w-64 bg-[#080C14]/80 backdrop-blur-2xl border-r border-white/5 flex flex-col h-screen fixed left-0 top-0 z-40 select-none shadow-xl">
+    <aside className="w-64 bg-[#080C14]/45 backdrop-blur-2xl border-r border-white/10 flex flex-col h-screen fixed left-0 top-0 z-40 select-none shadow-xl">
       {/* Brand Header */}
-      <div className="p-5 border-b border-white/5 flex items-center justify-between">
+      <div className="p-5 border-b border-white/10 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 group">
           <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-amber-400 flex items-center justify-center shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition-transform">
             <Sparkles className="w-5 h-5 text-white animate-pulse" />
@@ -119,7 +119,7 @@ export function Sidebar() {
       </div>
 
       {/* Footer User Info with Divine Touch */}
-      <div className="p-4 border-t border-white/5 bg-[#060810]/70 backdrop-blur-md">
+      <div className="p-4 border-t border-white/10 bg-[#060810]/70 backdrop-blur-md">
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-amber-500/20 to-indigo-500/20 border border-amber-400/40 flex items-center justify-center font-bold text-amber-300 text-xs">
             RC

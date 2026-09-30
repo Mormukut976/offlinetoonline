@@ -60,7 +60,7 @@ export default async function DashboardPage() {
   return (
     <div className="space-y-8 max-w-7xl mx-auto pb-12">
       {/* Welcome Banner with Divine Glassmorphism */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-indigo-950/60 via-slate-900/70 to-slate-950/80 backdrop-blur-xl border border-indigo-500/25 p-8 shadow-2xl">
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-indigo-950/30 via-slate-900/35 to-slate-950/45 backdrop-blur-xl border border-indigo-500/25 p-8 shadow-2xl">
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-2.5">
             <div className="flex items-center gap-2 flex-wrap">
