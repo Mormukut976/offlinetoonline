@@ -7,7 +7,7 @@ import { MapPin, Phone, Mail, Clock, MessageSquare, ShieldCheck, ArrowRight } fr
 
 export default function ContactPage() {
   return (
-    <div className="py-12 lg:py-20 space-y-16">
+    <div className="py-12 lg:py-20 space-y-16 bg-section-contact min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}

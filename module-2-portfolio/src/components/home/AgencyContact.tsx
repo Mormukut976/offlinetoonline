@@ -30,7 +30,7 @@ Please connect with me!`;
   };
 
   return (
-    <section id="contact" className="py-20 lg:py-28 relative overflow-hidden bg-[#0c0e1a]">
+    <section id="contact" className="py-20 lg:py-28 relative overflow-hidden bg-section-contact border-b border-white/10">
       
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 left-1/3 -translate-y-1/2 w-[700px] h-[500px] ambient-glow-purple blur-[160px] pointer-events-none -z-10"></div>
@@ -58,7 +58,7 @@ Please connect with me!`;
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
           
           {/* Left: Contact Form (7 cols) */}
-          <div className="lg:col-span-7 modern-card p-6 sm:p-10 bg-[#0e101c] border-white/10 shadow-2xl">
+          <div className="lg:col-span-7 modern-card p-6 sm:p-10 border-white/10 shadow-2xl">
             <form onSubmit={handleSubmit} className="space-y-6">
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -167,7 +167,7 @@ Please connect with me!`;
           {/* Right: Direct Coordinates & Assurance (5 cols) */}
           <div className="lg:col-span-5 space-y-6 flex flex-col justify-between">
             
-            <div className="modern-card p-6 sm:p-8 bg-[#0f1222] border-white/10 space-y-6">
+            <div className="modern-card p-6 sm:p-8 border-white/10 space-y-6">
               
               <div className="flex items-center gap-3 pb-4 border-b border-white/10">
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-violet-600 to-emerald-400 p-0.5">

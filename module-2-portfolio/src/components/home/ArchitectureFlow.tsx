@@ -39,7 +39,7 @@ export default function ArchitectureFlow() {
   ];
 
   return (
-    <section id="architecture" className="py-20 lg:py-28 relative overflow-hidden bg-[#090a12] border-b border-white/10">
+    <section id="architecture" className="py-20 lg:py-28 relative overflow-hidden bg-section-architecture border-b border-white/10">
       
       {/* Background ambient lighting */}
       <div className="absolute top-1/3 right-1/4 w-[700px] h-[500px] ambient-glow-purple blur-[150px] pointer-events-none -z-10"></div>
@@ -64,7 +64,7 @@ export default function ArchitectureFlow() {
         </div>
 
         {/* Interconnected Node Flow Diagram (Inspired by Behance Video Frame 8) */}
-        <div className="p-6 sm:p-8 rounded-3xl bg-[#0e101c] border border-white/10 shadow-2xl space-y-6">
+        <div className="p-6 sm:p-8 rounded-3xl modern-card space-y-6">
           <div className="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center justify-between">
             <span>Omnichannel Customer Journey</span>
             <span className="text-emerald-400 font-mono">100% Automated Pipeline</span>
@@ -73,28 +73,28 @@ export default function ArchitectureFlow() {
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4 relative">
             
             {/* Node 1 */}
-            <div className="p-4 rounded-2xl bg-[#14172a] border border-white/5 space-y-2">
+            <div className="p-4 rounded-2xl bg-[#0a0d18]/70 backdrop-blur-md border border-white/10 space-y-2">
               <span className="text-[10px] font-mono font-bold text-slate-400">STAGE 01</span>
               <div className="font-bold text-white text-sm">Offline Storefront</div>
               <p className="text-[11px] text-slate-400">Physical shop, clinic, restaurant or fleet in your city.</p>
             </div>
 
             {/* Node 2 */}
-            <div className="p-4 rounded-2xl bg-[#14172a] border border-white/5 space-y-2">
+            <div className="p-4 rounded-2xl bg-[#0a0d18]/70 backdrop-blur-md border border-white/10 space-y-2">
               <span className="text-[10px] font-mono font-bold text-cyan-400">STAGE 02</span>
               <div className="font-bold text-white text-sm">Google 3-Pack SEO</div>
               <p className="text-[11px] text-slate-400">Nearby high-intent searches discover you first on Maps.</p>
             </div>
 
             {/* Node 3 */}
-            <div className="p-4 rounded-2xl bg-[#14172a] border border-violet-500/30 space-y-2">
+            <div className="p-4 rounded-2xl bg-[#0a0d18]/70 backdrop-blur-md border border-violet-500/40 space-y-2">
               <span className="text-[10px] font-mono font-bold text-violet-400">STAGE 03</span>
               <div className="font-bold text-white text-sm">Jamstack Web App</div>
               <p className="text-[11px] text-slate-400">Sub-second loading with interactive pricing calculators.</p>
             </div>
 
             {/* Node 4 */}
-            <div className="p-4 rounded-2xl bg-[#14172a] border border-emerald-500/30 space-y-2">
+            <div className="p-4 rounded-2xl bg-[#0a0d18]/70 backdrop-blur-md border border-emerald-500/40 space-y-2">
               <span className="text-[10px] font-mono font-bold text-emerald-400">STAGE 04</span>
               <div className="font-bold text-white text-sm">WhatsApp Funnel</div>
               <p className="text-[11px] text-slate-400">Customer requirements auto-fill into WhatsApp chat.</p>
@@ -148,7 +148,7 @@ export default function ArchitectureFlow() {
           </div>
 
           {/* Card 2: Engineering (Dark Glass Card with Metrics) */}
-          <div className="modern-card p-7 sm:p-8 bg-[#0f1222] border-white/10 space-y-6">
+          <div className="modern-card p-7 sm:p-8 space-y-6">
             <div className="flex items-center justify-between">
               <span className="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-bold uppercase tracking-wider">
                 Phase 02
@@ -166,7 +166,7 @@ export default function ArchitectureFlow() {
             </div>
 
             {/* Performance Bar Chart Stats */}
-            <div className="p-4 rounded-2xl bg-[#15182a] border border-white/5 space-y-3">
+            <div className="p-4 rounded-2xl bg-[#0a0d18]/70 backdrop-blur-md border border-white/10 space-y-3">
               <div className="space-y-1.5">
                 <div className="flex justify-between text-xs">
                   <span className="text-slate-400 font-medium">Google PageSpeed</span>
@@ -200,7 +200,7 @@ export default function ArchitectureFlow() {
           </div>
 
           {/* Card 3: Omnichannel Launch (Dark Glass Card with Trajectory) */}
-          <div className="modern-card p-7 sm:p-8 bg-[#0f1222] border-white/10 space-y-6">
+          <div className="modern-card p-7 sm:p-8 space-y-6">
             <div className="flex items-center justify-between">
               <span className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-wider">
                 Phase 03
@@ -218,7 +218,7 @@ export default function ArchitectureFlow() {
             </div>
 
             {/* Growth Indicator Widget */}
-            <div className="p-4 rounded-2xl bg-[#15182a] border border-white/5 space-y-3">
+            <div className="p-4 rounded-2xl bg-[#0a0d18]/70 backdrop-blur-md border border-white/10 space-y-3">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-medium text-slate-400">Average Client Surge</span>
                 <span className="text-emerald-400 text-xs font-bold font-mono">+340% Inquiries</span>

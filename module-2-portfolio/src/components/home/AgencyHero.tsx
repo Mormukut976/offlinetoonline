@@ -32,7 +32,7 @@ export default function AgencyHero() {
 
         {/* Dual-Tone Headline */}
         <div className="text-center max-w-4xl mx-auto space-y-6">
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-slate-100 leading-[1.08] font-heading">
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white leading-[1.08] font-heading drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)]">
             Transform your{' '}
             <span className="text-white">offline business</span>{' '}
             into a{' '}
@@ -41,7 +41,7 @@ export default function AgencyHero() {
             </span>
           </h1>
 
-          <p className="text-base sm:text-xl font-medium text-slate-300 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-base sm:text-xl font-medium text-slate-100 leading-relaxed max-w-3xl mx-auto drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
             We build ultra-fast Jamstack web applications, dominate local Google Maps 3-Pack rankings, and deploy direct WhatsApp lead funnels for forward-thinking Indian businesses.{' '}
             <strong className="text-white font-bold">
               Sub-second speed with guaranteed lifetime ₹0 server bills.
@@ -71,17 +71,17 @@ export default function AgencyHero() {
           </div>
 
           {/* Trust Guarantees */}
-          <div className="pt-4 flex flex-wrap items-center justify-center gap-y-2 gap-x-6 text-xs text-slate-400 font-semibold">
-            <span className="flex items-center gap-1.5 text-slate-300">
+          <div className="pt-4 flex flex-wrap items-center justify-center gap-3 text-xs text-slate-200 font-semibold">
+            <span className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0a0e1c]/80 backdrop-blur-md border border-white/15 shadow-md">
               <CheckCircle2 className="w-4 h-4 text-emerald-400" /> 48-Hour Live Turnaround
             </span>
-            <span className="flex items-center gap-1.5 text-slate-300">
+            <span className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0a0e1c]/80 backdrop-blur-md border border-white/15 shadow-md">
               <CheckCircle2 className="w-4 h-4 text-emerald-400" /> ₹0 Monthly Server Cost
             </span>
-            <span className="flex items-center gap-1.5 text-slate-300">
+            <span className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0a0e1c]/80 backdrop-blur-md border border-white/15 shadow-md">
               <CheckCircle2 className="w-4 h-4 text-emerald-400" /> 100% Code & Domain Ownership
             </span>
-            <span className="flex items-center gap-1.5 text-slate-300">
+            <span className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0a0e1c]/80 backdrop-blur-md border border-white/15 shadow-md">
               <CheckCircle2 className="w-4 h-4 text-emerald-400" /> Acrylic NFC Standee Included
             </span>
           </div>

@@ -63,7 +63,7 @@ export default function AgencyPricing() {
   ];
 
   return (
-    <section id="pricing" className="py-20 lg:py-28 relative overflow-hidden bg-[#090a12] border-b border-white/10">
+    <section id="pricing" className="py-20 lg:py-28 relative overflow-hidden bg-section-pricing border-b border-white/10">
       
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[700px] h-[500px] ambient-glow-purple blur-[160px] pointer-events-none -z-10"></div>
@@ -94,8 +94,8 @@ export default function AgencyPricing() {
               key={pkg.id}
               className={`modern-card p-8 flex flex-col justify-between relative transition-all duration-300 ${
                 pkg.popular
-                  ? 'border-violet-500/50 bg-gradient-to-b from-[#181a32] to-[#0f1122] shadow-2xl shadow-violet-950/40 lg:-translate-y-2'
-                  : 'bg-[#0e101c] border-white/10'
+                  ? 'border-violet-500/60 modern-card shadow-2xl shadow-violet-950/40 lg:-translate-y-2 !bg-[#13172e]/75'
+                  : 'border-white/10'
               }`}
             >
               {pkg.popular && (

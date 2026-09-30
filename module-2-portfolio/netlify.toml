@@ -2,6 +2,18 @@
   command = "npm run build"
   publish = "out"
 
+[build.environment]
+  NETLIFY_ENABLE_DRAWER = "false"
+
+[context.production.environment]
+  NETLIFY_ENABLE_DRAWER = "false"
+
+[context.deploy-preview.environment]
+  NETLIFY_ENABLE_DRAWER = "false"
+
+[context.branch-deploy.environment]
+  NETLIFY_ENABLE_DRAWER = "false"
+
 [[headers]]
   for = "/*"
   [headers.values]

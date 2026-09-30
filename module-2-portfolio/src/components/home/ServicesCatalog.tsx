@@ -17,7 +17,7 @@ export default function ServicesCatalog() {
   };
 
   return (
-    <section id="catalog" className="py-20 lg:py-28 relative overflow-hidden bg-[#0c0e1a] border-b border-white/10">
+    <section id="catalog" className="py-20 lg:py-28 relative overflow-hidden bg-section-services border-b border-white/10">
       
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 left-1/3 -translate-y-1/2 w-[800px] h-[600px] ambient-glow-cyan blur-[160px] pointer-events-none -z-10"></div>
@@ -51,8 +51,8 @@ export default function ServicesCatalog() {
                 key={service.id}
                 className={`modern-card p-7 sm:p-8 flex flex-col justify-between transition-all duration-300 ${
                   service.highlight
-                    ? 'border-violet-500/40 bg-gradient-to-b from-[#16182c] to-[#0e101d] shadow-xl shadow-violet-950/20'
-                    : 'bg-[#101222] border-white/10'
+                    ? 'border-violet-500/50 shadow-xl shadow-violet-950/30'
+                    : 'border-white/10'
                 }`}
               >
                 <div className="space-y-6">

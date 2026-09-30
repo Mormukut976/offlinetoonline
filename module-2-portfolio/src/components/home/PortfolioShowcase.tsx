@@ -23,7 +23,7 @@ export default function PortfolioShowcase() {
     : PROJECTS.filter((p) => p.category === activeTab);
 
   return (
-    <section id="portfolio" className="py-20 lg:py-28 relative overflow-hidden bg-[#090a12] border-b border-white/10">
+    <section id="portfolio" className="py-20 lg:py-28 relative overflow-hidden bg-section-portfolio border-b border-white/10">
       
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[700px] h-[500px] ambient-glow-purple blur-[160px] pointer-events-none -z-10"></div>
@@ -69,7 +69,7 @@ export default function PortfolioShowcase() {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="modern-card overflow-hidden flex flex-col justify-between bg-[#0e101c] border-white/10 group hover:border-violet-500/40"
+              className="modern-card overflow-hidden flex flex-col justify-between border-white/10 group hover:border-violet-500/40"
             >
               <div>
                 {/* Visual Thumbnail */}

@@ -28,7 +28,7 @@ export default function BusinessROICalculator() {
   const serverSavingsPerYear = 14400; // WordPress/Vultr hosting saved per year
 
   return (
-    <section id="calculator" className="py-20 lg:py-28 relative overflow-hidden bg-[#0c0e1a] border-b border-white/10">
+    <section id="calculator" className="py-20 lg:py-28 relative overflow-hidden bg-section-calculator border-b border-white/10">
       
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[700px] h-[500px] ambient-glow-emerald blur-[160px] pointer-events-none -z-10"></div>
@@ -53,7 +53,7 @@ export default function BusinessROICalculator() {
         </div>
 
         {/* Calculator Main Box */}
-        <div className="max-w-5xl mx-auto modern-card p-6 sm:p-10 bg-[#0e1120] border-white/10 shadow-2xl">
+        <div className="max-w-5xl mx-auto modern-card p-6 sm:p-10 border-white/10 shadow-2xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             {/* Left Controls (7 cols) */}
